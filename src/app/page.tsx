@@ -1,8 +1,14 @@
-'use client'; // need to use it because  styled components does not support next 13 yet 
+'use client';
+
+import { ContainerPresentation } from "@/styles/LandingStyled";
+
+// need to use it because  styled components does not support next 13 yet 
 
 const Home = () => {
   return (
-    <div></div>
+    <ContainerPresentation lightBg>
+      <p></p>
+    </ContainerPresentation>
   )
 }
 

@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap');
+
+/* using this way because cannot use next/font with styled-components */
+
 * {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
   box-sizing: border-box;
-  font-family: var(--font-jakarta), sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 body {

@@ -10,6 +10,11 @@
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+:root {
+  --bgMain: #ffffff;
+  --bgSecondary: #f0f8ff;
+}
+
 body {
   overflow-x: hidden;
 }

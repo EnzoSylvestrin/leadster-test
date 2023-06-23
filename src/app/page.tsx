@@ -1,10 +1,8 @@
-'use client';
-
-import { StyledMain } from "@/styles/Main";
+'use client'; // need to use it because  styled components does not support next 13 yet 
 
 const Home = () => {
   return (
-    <StyledMain>Hello world</StyledMain>
+    <div></div>
   )
 }
 

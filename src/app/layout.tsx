@@ -1,8 +1,4 @@
-import './globals.css';
-
-import { Plus_Jakarta_Sans } from 'next/font/google';
-
-const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'] })
+import '../styles/globals.css';
 
 export const metadata = {
   title: 'Leadster test',
@@ -12,7 +8,7 @@ export const metadata = {
 export const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="pt">
-      <body className={`${jakarta.className} font-sans`}>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }

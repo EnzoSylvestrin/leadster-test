@@ -1,5 +1,11 @@
-export default function Home() {
+'use client';
+
+import { StyledMain } from "@/styles/Main";
+
+const Home = () => {
   return (
-    <div></div>
+    <StyledMain>Hello world</StyledMain>
   )
 }
+
+export default Home;

@@ -1,8 +1,10 @@
 import { SimpleImage, Wrapper } from "@/styles/globalStyles/Commom";
 
-import { ContainerFooter, GridLinks, Items } from "./FooterStyled";
-
 import Logo from '@/assets/elements/logo.png';
+
+import { FaLinkedinIn, FaFacebookF, FaInstagram } from 'react-icons/fa';
+
+import { ContainerFooter, Copyright, GridLinks, IconStyled, Items, LightLine } from "./FooterStyled";
 import { TextStyled } from "../Text/TextStyled";
 
 type LinksProps = {
@@ -72,10 +74,15 @@ const Footer = () => {
                         </Items>
                     ))
                 }
-                <Items>
+                <Items marginBottom="8px">
                     <h2 style={{ fontSize: '1.125rem' }}>
                         Siga a Leadster
                     </h2>
+                    <Wrapper gap="8px">
+                        <IconStyled><FaLinkedinIn size={16} color="#727272" /></IconStyled>
+                        <IconStyled><FaFacebookF size={16} color="#727272" /></IconStyled>
+                        <IconStyled><FaInstagram size={16} color="#727272" /></IconStyled>
+                    </Wrapper>
                     <TextStyled size="0.875rem">
                         Email: <a href={"mailto:contato@leadster.com.br"} style={{ color: '#969696' }}>contato@leadster.com.br</a>
                     </TextStyled>
@@ -84,6 +91,15 @@ const Footer = () => {
                     </TextStyled>
                 </Items>
             </GridLinks>
+            <LightLine />
+            <Copyright>
+                <TextStyled size="0.750rem" style={{ color: '#969696' }}>
+                    Copyright @ 2015 - 2022 todos os direitos reservados | <a href="#" style={{ color: "#0961d3" }}>Leadster</a>
+                </TextStyled>
+                <TextStyled size="0.750rem" style={{ color: '#969696' }}>
+                    Rua jóse loureiro, 464 - Centro - Curitiba PR - CEP: 80010-000 | Termos de uso
+                </TextStyled>
+            </Copyright>
         </ContainerFooter>
     );
 }

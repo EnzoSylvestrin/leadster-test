@@ -2,6 +2,7 @@
 
 import Asset from '@/assets/elements/asset-header.png';
 import Comparativo from '@/assets/elements/comparativo.png';
+import SeloRD from '@/assets/elements/selo_RD.png';
 
 import { TextStyled } from "@/components/Text/TextStyled";
 import { Line } from "@/components/Line/LineStyled";
@@ -10,12 +11,9 @@ import { PaginationNumber } from '@/components/PaginationNumbers/PaginationNumbe
 
 import { Cards, ContainerVideos, SelectFilters, WrapperFilters, WrapperPagination, WrapperVideos } from '@/styles/initialPage/VideosStyled';
 import { ContainerAttention, ContainerPresentation, Holder, ImageStyled } from "@/styles/initialPage/PresentationStyled";
-import { ContainerDemonstration, WrapperDemonstration, WrapperImage, DemonstrationImage } from '@/styles/initialPage/DemonstrationStyled';
-
-export const metadata = {
-  title: 'Leadster test',
-  description: 'site made to leadster test',
-}
+import { ContainerDemonstration } from '@/styles/initialPage/DemonstrationStyled';
+import { SimpleImage, Wrapper } from '@/styles/globalStyles/Commom';
+import { Button } from '@/components/Button/ButtonStyled';
 
 const Home = () => {
   return (
@@ -60,10 +58,10 @@ const Home = () => {
         </WrapperVideos>
       </ContainerVideos>
       <ContainerDemonstration lightBg>
-        <WrapperImage>
-          <DemonstrationImage src={Comparativo} alt='Leadter results' />
-        </WrapperImage>
-        <WrapperDemonstration>
+        <Wrapper align='center' justify='center'>
+          <SimpleImage src={Comparativo} alt='Leadter results' widthIntern='550px' />
+        </Wrapper>
+        <Wrapper direction='column'>
           <TextStyled size='2rem' line={1.300}>
             Pronto para triplicar sua <br />
             <span style={{ fontWeight: '700' }}>Geração de leads?</span>
@@ -72,7 +70,14 @@ const Home = () => {
             Criação e ativação em <span style={{ fontWeight: '700' }}>4 minutos</span>
           </TextStyled>
           <Line width='100%' margin="20px 0px" />
-        </WrapperDemonstration>
+          <Wrapper gap="8px">
+            <Button>Ver Demonstração</Button>
+            <SimpleImage src={SeloRD} alt='Selo RD' widthIntern='160px' />
+          </Wrapper>
+          <Wrapper gap="6px">
+
+          </Wrapper>
+        </Wrapper>
       </ContainerDemonstration>
     </>
   )

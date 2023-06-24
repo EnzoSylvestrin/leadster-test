@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 
 type ContainerProps = {
@@ -14,12 +15,25 @@ type WrapperProps = {
     width?: string,
     align?: 'start' | 'center' | 'end',
     justify?: 'start' | 'center' | 'end',
+    direction?: 'row' | 'column',
+    margin?: string,
 }
 
 export const Wrapper = styled.div<WrapperProps>`
     display: flex;
     width: ${props => props.width ?? '100%'};
-    gap:  ${props => props.gap ?? '0px'};
+    gap: ${props => props.gap ?? '0px'};
     align-items: ${props => props.align ?? 'flex-start'};
     justify-content: ${props => props.justify ?? 'flex-start'};
+    flex-direction: ${props => props.direction ?? 'row'};
+    margin: ${props => props.margin ?? '0px'}
+`;
+
+type ImageProps = {
+    widthIntern: string
+}
+
+export const SimpleImage = styled(Image) <ImageProps>`
+    height: auto;
+    width: ${props => props.widthIntern ?? 'auto'};
 `;

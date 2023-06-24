@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import Image from "next/image";
 
-import { Container } from "./Commom";
+import { Container } from "../globalStyles/Commom";
 
 export const ContainerPresentation = styled(Container)`
     min-height: calc(100vh - 80px);

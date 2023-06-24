@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container } from "./Commom";
+import { Container } from "../globalStyles/Commom";
 
 export const ContainerVideos = styled(Container)`
     margin: 40px 0;

@@ -1,8 +1,8 @@
 'use client';
 
-import '../styles/globals.css';
+import '../styles/globalStyles/globals.css';
 
-import { Container } from '@/styles/Main';
+import { Container } from '@/styles/globalStyles/Main';
 
 import Header from '@/components/Header/Header';
 

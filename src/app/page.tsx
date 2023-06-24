@@ -1,13 +1,16 @@
 'use client'; // need to use it because  styled components does not support next 13 yet 
 
 import Asset from '@/assets/elements/asset-header.png';
+import Comparativo from '@/assets/elements/comparativo.png';
 
-import { ContainerAttention, ContainerPresentation, Holder, ImageStyled } from "@/styles/PresentationStyled";
 import { TextStyled } from "@/components/Text/TextStyled";
-import { Cards, ContainerVideos, SelectFilters, WrapperFilters, WrapperPagination, WrapperVideos } from '@/styles/VideosStyled';
 import { Line } from "@/components/Line/LineStyled";
 import { FilterCard } from '@/components/FilterCard/FilterStyled';
 import { PaginationNumber } from '@/components/PaginationNumbers/PaginationNumbers';
+
+import { Cards, ContainerVideos, SelectFilters, WrapperFilters, WrapperPagination, WrapperVideos } from '@/styles/initialPage/VideosStyled';
+import { ContainerAttention, ContainerPresentation, Holder, ImageStyled } from "@/styles/initialPage/PresentationStyled";
+import { ContainerDemonstration, WrapperDemonstration, WrapperImage, DemonstrationImage } from '@/styles/initialPage/DemonstrationStyled';
 
 export const metadata = {
   title: 'Leadster test',
@@ -56,6 +59,18 @@ const Home = () => {
           </WrapperPagination>
         </WrapperVideos>
       </ContainerVideos>
+      <ContainerDemonstration lightBg>
+        <WrapperImage>
+          <DemonstrationImage src={Comparativo} alt='Leadter results' />
+        </WrapperImage>
+        <WrapperDemonstration>
+          <TextStyled size='2rem' line={1.300}>
+            Pronto para triplicar sua <br />
+            <span style={{ fontWeight: '700' }}>Geração de leads?</span>
+          </TextStyled>
+          <Line width='100%' margin="20px 0px" />
+        </WrapperDemonstration>
+      </ContainerDemonstration>
     </>
   )
 }

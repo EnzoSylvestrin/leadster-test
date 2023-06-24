@@ -3,6 +3,8 @@
 import Asset from '@/assets/elements/asset-header.png';
 import Comparativo from '@/assets/elements/comparativo.png';
 import SeloRD from '@/assets/elements/selo_RD.png';
+import NoCard from '@/assets/elements/no-card-dark.webp';
+import Rating from '@/assets/elements/rating.webp';
 
 import { TextStyled } from "@/components/Text/TextStyled";
 import { Line } from "@/components/Line/LineStyled";
@@ -11,7 +13,7 @@ import { PaginationNumber } from '@/components/PaginationNumbers/PaginationNumbe
 
 import { Cards, ContainerVideos, SelectFilters, WrapperFilters, WrapperPagination, WrapperVideos } from '@/styles/initialPage/VideosStyled';
 import { ContainerAttention, ContainerPresentation, Holder, ImageStyled } from "@/styles/initialPage/PresentationStyled";
-import { ContainerDemonstration } from '@/styles/initialPage/DemonstrationStyled';
+import { ContainerDemonstration, Separator } from '@/styles/initialPage/DemonstrationStyled';
 import { SimpleImage, Wrapper } from '@/styles/globalStyles/Commom';
 import { Button } from '@/components/Button/ButtonStyled';
 
@@ -74,8 +76,15 @@ const Home = () => {
             <Button>Ver Demonstração</Button>
             <SimpleImage src={SeloRD} alt='Selo RD' widthIntern='160px' />
           </Wrapper>
-          <Wrapper gap="6px">
-
+          <Wrapper gap="6px" align='center' margin='6px 0 0 0'>
+            <SimpleImage src={NoCard} alt="Cartão não necessário" widthIntern='16px' />
+            <TextStyled size='0.825rem'>
+              <span style={{ fontWeight: '700' }}>Não</span>
+              {' '} é necessário Cartão de Crédito
+            </TextStyled>
+            <Separator />
+            <SimpleImage src={Rating} alt='Avaliação' widthIntern='auto' />
+            <TextStyled size='0.825rem'>4.9/5 média de satisfação</TextStyled>
           </Wrapper>
         </Wrapper>
       </ContainerDemonstration>

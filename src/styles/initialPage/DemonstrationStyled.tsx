@@ -7,3 +7,9 @@ export const ContainerDemonstration = styled(Container)`
     align-items: center;
     justify-content: center;
 `;
+
+export const Separator = styled.div`
+    width: 2px;
+    height: 20px;
+    background-color: #acaaaa;
+`;

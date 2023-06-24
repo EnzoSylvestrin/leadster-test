@@ -5,7 +5,7 @@ import Logo from '@/assets/elements/logo.png';
 const Header = () => {
     return (
         <HeaderStyled>
-            <ImageStyled src={Logo} alt="Logo l" />
+            <ImageStyled src={Logo} alt="Logo leadster" />
         </HeaderStyled>
     );
 }

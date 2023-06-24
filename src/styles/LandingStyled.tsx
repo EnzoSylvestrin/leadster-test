@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import Image from "next/image";
+
 import { Container } from "./Commom";
 
 export const ContainerPresentation = styled(Container)`
@@ -7,11 +9,37 @@ export const ContainerPresentation = styled(Container)`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+`;
+
+export const ContainerAttention = styled.div`
+    width: auto;
+    position: relative;
+`
+
+export const ImageStyled = styled(Image)`
+    position: absolute;
+    inset: -5px -15px auto auto;
 `;
 
 export const Holder = styled.div`
-    width: 120px;
-    border-radius: 20px 20px 20px 10px;
+    width: 200px;
+    border-radius: 20px 20px 20px 0px;
     background-color: transparent;
     border: 2px solid var(--main);
+    color: var(--main);
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    user-select: none;
+`;
+
+export const Line = styled.div`
+    margin-top: 20px;
+    width: 600px;
+    background-color: #d4d1d1;
+    height: 2px;
 `;

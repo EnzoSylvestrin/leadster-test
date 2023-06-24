@@ -36,10 +36,3 @@ export const Holder = styled.div`
     text-transform: uppercase;
     user-select: none;
 `;
-
-export const Line = styled.div`
-    margin-top: 20px;
-    width: 600px;
-    background-color: #d4d1d1;
-    height: 2px;
-`;

@@ -68,6 +68,9 @@ const Home = () => {
             Pronto para triplicar sua <br />
             <span style={{ fontWeight: '700' }}>Geração de leads?</span>
           </TextStyled>
+          <TextStyled size='1.125rem' style={{ marginTop: '8px' }}>
+            Criação e ativação em <span style={{ fontWeight: '700' }}>4 minutos</span>
+          </TextStyled>
           <Line width='100%' margin="20px 0px" />
         </WrapperDemonstration>
       </ContainerDemonstration>

@@ -25,3 +25,13 @@ export const WrapperDemonstration = styled.div`
     display: flex;
     flex-direction: column;
 `;
+
+export const WrapperButton = styled.div`
+    display: flex;
+    gap: 8px;
+`;
+
+export const WrapperNote = styled.div`
+    display: flex;
+    gap: 6px;
+`;

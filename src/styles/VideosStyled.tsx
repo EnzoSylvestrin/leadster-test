@@ -36,3 +36,10 @@ export const SelectFilters = styled.div`
     align-items: center;
     gap: 8px;
 `;
+
+export const WrapperPagination = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+`;

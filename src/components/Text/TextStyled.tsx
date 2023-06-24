@@ -5,7 +5,8 @@ type TextProps = {
     align?: 'left' | 'center' | 'right'
     color?: string | 'main',
     gradient?: boolean,
-    weight?: "bold" | string
+    weight?: "bold" | string,
+    select?: "none" | "normal"
 };
 
 export const TextStyled = styled.p<TextProps>`
@@ -20,6 +21,7 @@ export const TextStyled = styled.p<TextProps>`
     };
     text-align: ${props => props.align ?? 'left'};
     font-weight: ${props => props.weight ?? 'normal'};
+    user-select:  ${props => props.select ?? 'normal'};
     ${props => {
         if (!props.gradient) {
             return;

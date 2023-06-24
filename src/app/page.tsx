@@ -4,9 +4,10 @@ import Asset from '@/assets/elements/asset-header.png';
 
 import { ContainerAttention, ContainerPresentation, Holder, ImageStyled } from "@/styles/PresentationStyled";
 import { TextStyled } from "@/components/Text/TextStyled";
-import { Cards, ContainerVideos, SelectFilters, WrapperFilters, WrapperVideos } from '@/styles/VideosStyled';
+import { Cards, ContainerVideos, SelectFilters, WrapperFilters, WrapperPagination, WrapperVideos } from '@/styles/VideosStyled';
 import { Line } from "@/components/Line/LineStyled";
 import { FilterCard } from '@/components/FilterCard/FilterStyled';
+import { PaginationNumber } from '@/components/PaginationNumbers/PaginationNumbers';
 
 export const metadata = {
   title: 'Leadster test',
@@ -18,9 +19,9 @@ const Home = () => {
     <>
       <ContainerPresentation lightBg>
         <Holder>Webinars exclusivos</Holder>
-        <TextStyled size="2.5rem" weight="500">Menos Conversinha,</TextStyled>
+        <TextStyled size="2.5rem" weight="500" select='none'>Menos Conversinha,</TextStyled>
         <ContainerAttention>
-          <TextStyled size="4.5rem" weight="bold" gradient>Mais Conversão</TextStyled>
+          <TextStyled size="4.5rem" weight="bold" gradient select='none'>Mais Conversão</TextStyled>
           <ImageStyled src={Asset} alt="" />
         </ContainerAttention>
         <Line />
@@ -44,6 +45,15 @@ const Home = () => {
             </SelectFilters>
           </WrapperFilters>
           <Line width='100%' margin='20px 0px' />
+          <p>TODO: Videos</p>
+          <Line width='100%' margin='20px 0px' />
+          <WrapperPagination>
+            <TextStyled size="1rem" weight='700' style={{ marginRight: '2px' }}>Página</TextStyled>
+            <PaginationNumber>1</PaginationNumber>
+            <PaginationNumber>2</PaginationNumber>
+            <PaginationNumber className='active'>3</PaginationNumber>
+            <PaginationNumber>4</PaginationNumber>
+          </WrapperPagination>
         </WrapperVideos>
       </ContainerVideos>
     </>

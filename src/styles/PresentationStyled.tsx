@@ -21,6 +21,7 @@ export const ContainerAttention = styled.div`
 export const ImageStyled = styled(Image)`
     position: absolute;
     inset: -5px -15px auto auto;
+    user-select: none;
 `;
 
 export const Holder = styled.div`

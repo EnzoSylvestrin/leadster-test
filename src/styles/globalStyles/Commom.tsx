@@ -30,10 +30,10 @@ export const Wrapper = styled.div<WrapperProps>`
 `;
 
 type ImageProps = {
-    widthIntern: string
+    widthintern: string
 }
 
 export const SimpleImage = styled(Image) <ImageProps>`
     height: auto;
-    width: ${props => props.widthIntern ?? 'auto'};
+    width: ${props => props.widthintern ?? 'auto'};
 `;

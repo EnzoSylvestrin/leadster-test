@@ -16,7 +16,7 @@ export const ContainerPresentation = styled(Container)`
 export const ContainerAttention = styled.div`
     width: auto;
     position: relative;
-`
+`;
 
 export const ImageStyled = styled(Image)`
     position: absolute;

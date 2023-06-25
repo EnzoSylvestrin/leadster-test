@@ -9,11 +9,11 @@ import Rating from '@/assets/elements/rating.webp';
 import { TextStyled } from "@/components/Text/TextStyled";
 import { Button } from '@/components/Button/ButtonStyled';
 import { Line } from "@/components/Line/LineStyled";
+import VideosSection from '@/components/Videos/Videos';
 
 import { ContainerAttention, ContainerPresentation, Holder, ImageStyled, TextConvertion, LinePresentation, TextChat } from "@/styles/initialPage/PresentationStyled";
-import { ContainerDemonstration, Separator } from '@/styles/initialPage/DemonstrationStyled';
+import { ComparationImage, ContainerDemonstration, Separator, TextCriation, TextReady, WrapperButton, WrapperNotes, WrapperText } from '@/styles/initialPage/DemonstrationStyled';
 import { SimpleImage, Wrapper } from '@/styles/globalStyles/Commom';
-import VideosSection from '@/components/Videos/Videos';
 
 const Home = () => {
   return (
@@ -35,32 +35,34 @@ const Home = () => {
       <VideosSection />
       <ContainerDemonstration lightBg>
         <Wrapper align='center' justify='center'>
-          <SimpleImage src={Comparativo} alt='Leadter results' widthintern='550px' />
+          <ComparationImage src={Comparativo} alt='Leadter results' widthintern='550px' />
         </Wrapper>
-        <Wrapper direction='column'>
-          <TextStyled size='2rem' line={1.300}>
+        <WrapperText direction='column'>
+          <TextReady size='2rem' line={1.300}>
             Pronto para triplicar sua <br />
             <span style={{ fontWeight: '700' }}>Geração de leads?</span>
-          </TextStyled>
-          <TextStyled size='1.125rem' style={{ marginTop: '8px' }}>
+          </TextReady>
+          <TextCriation size='1.125rem' style={{ marginTop: '8px' }}>
             Criação e ativação em <span style={{ fontWeight: '700' }}>4 minutos</span>
-          </TextStyled>
+          </TextCriation>
           <Line width='100%' margin="20px 0px" />
-          <Wrapper gap="8px">
+          <WrapperButton gap="8px">
             <Button>Ver Demonstração</Button>
             <SimpleImage src={SeloRD} alt='Selo RD' widthintern='160px' />
-          </Wrapper>
-          <Wrapper gap="6px" align='center' margin='6px 0 0 0'>
+          </WrapperButton>
+          <WrapperNotes gap="6px" align='center' margin='6px 0 0 0'>
             <SimpleImage src={NoCard} alt="Cartão não necessário" widthintern='16px' />
             <TextStyled size='0.825rem'>
               <span style={{ fontWeight: '700' }}>Não</span>
               {' '} é necessário Cartão de Crédito
             </TextStyled>
             <Separator />
-            <SimpleImage src={Rating} alt='Avaliação' widthintern='auto' />
-            <TextStyled size='0.825rem'><span style={{ fontWeight: 'bold' }}>4.9</span>/5 média de satisfação</TextStyled>
-          </Wrapper>
-        </Wrapper>
+            <Wrapper width='auto' align="center" justify='start' gap='8px'>
+              <SimpleImage src={Rating} alt='Avaliação' widthintern='auto' />
+              <TextStyled size='0.825rem'><span style={{ fontWeight: 'bold' }}>4.9</span>/5 média de satisfação</TextStyled>
+            </Wrapper>
+          </WrapperNotes>
+        </WrapperText>
       </ContainerDemonstration>
     </>
   )

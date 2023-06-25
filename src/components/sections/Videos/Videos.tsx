@@ -147,7 +147,7 @@ const VideosSection = () => {
                             <PaginationNumber
                                 key={i}
                                 id={`${i + 1}`}
-                                className={paginationId === i ? 'active' : ''}
+                                className={paginationId === i + 1 ? 'active' : ''}
                                 onClick={HandlePaginationClick}
                             >
                                 {pageNumber}

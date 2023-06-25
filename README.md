@@ -1,10 +1,10 @@
 <h1 align="center">
-  💻<br /><a href="https://.vercel.app">Teste Leadster</a>
+  💻<br /><a href="https://leadster-test.vercel.app">Teste Leadster</a>
 </h1>
 
 ![Resultado final do projeto](img-app.png)
 
-<h4 align="center"><a href="https://.vercel.app">Clique para visitar o projeto</a></h4>
+<h4 align="center"><a href="https://leadster-test.vercel.app">Clique para visitar o projeto</a></h4>
 
 ## 🧠 Decisões:
 
@@ -54,6 +54,6 @@ npm run dev
 
 então é só abrir o endereço http://localhost:3000 e visualizar o projeto! 
 
-para ver o projeto na vercel clique <a href="https://.vercel.app">aqui</a>
+para ver o projeto na vercel clique <a href="https://leadster-test.vercel.app">aqui</a>
 
 

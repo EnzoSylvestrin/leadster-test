@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 import Image from "next/image";
 
+import { motion } from "framer-motion";
+
 import { TextStyled } from "@/components/Text/TextStyled";
 
 import { Container } from "../globalStyles/Commom";
@@ -16,15 +18,14 @@ export const ContainerPresentation = styled(Container)`
     gap: 10px;
 `;
 
-export const ContainerAttention = styled.div`
+export const ContainerAttention = styled.main`
     width: auto;
     position: relative;
 `;
 
-export const ImageStyled = styled(Image)`
+export const ImageAnimation = styled(motion.div)`
     position: absolute;
     inset: -1px 2px auto auto;
-    height: auto;
     user-select: none;
 
     @media (max-width: 670px) {
@@ -36,8 +37,16 @@ export const ImageStyled = styled(Image)`
     }
 
     @media (max-width: 352px) {
-        width: 36px;
         inset: 34px 30px auto auto;
+    }
+
+`;
+
+export const ImageStyled = styled(Image)`
+    height: auto;
+
+    @media (max-width: 352px) {
+        width: 36px;
     }
 `;
 

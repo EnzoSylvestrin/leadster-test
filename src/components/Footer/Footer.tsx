@@ -52,7 +52,7 @@ const Footer = () => {
     return (
         <ContainerFooter>
             <Wrapper direction="column" align="center" justify="center">
-                <SimpleImage src={Logo} alt="Logo Leadster" widthintern="220px" />
+                <SimpleImage src={Logo} alt="Logo Leadster" widthintern="220px" quality={100} />
                 <TextStyled size="0.825rem" style={{ marginTop: '8px' }}>Tranformando visitantes em clientes</TextStyled>
             </Wrapper>
             <GridLinks>

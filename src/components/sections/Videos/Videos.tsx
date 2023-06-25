@@ -1,4 +1,6 @@
-import { useState, MouseEvent } from 'react';
+import { useState, MouseEvent, useEffect } from 'react';
+
+import Thumbnail from '@/assets/elements/thumbnail.png';
 
 import { PaginationNumber } from "../../PaginationNumbers/PaginationNumbers";
 import { FilterCard } from "../../FilterCard/FilterStyled";
@@ -6,16 +8,23 @@ import { TextStyled, } from "../../Text/TextStyled";
 import { Select } from "../../Select/SelectStyled";
 import { Line } from "../../Line/LineStyled";
 
-import { ContainerVideos, WrapperVideos, WrapperFilters, WrapperCards, WrapperSelect, WrapperPagination } from "./VideosStyled";
+import { ContainerVideos, WrapperVideos, WrapperFilters, WrapperCards, WrapperSelect, WrapperPagination, GridVideos, Video, ThumbnailImage } from "./VideosStyled";
 
 type CardObject = {
     name: string,
 }
 
+type Video = {
+    id: string,
+    title: string,
+    image: string,
+    url: string,
+}
+
 const VideosSection = () => {
 
     const [cardId, setCardId] = useState<number>(3);
-    const [paginationId, setPaginationId] = useState<number>(2);
+    const [paginationId, setPaginationId] = useState<number>(1);
 
     const FilterCards: CardObject[] = [
         { name: 'Agências' },
@@ -25,11 +34,26 @@ const VideosSection = () => {
         { name: 'Mídia paga' }
     ]
 
-    const videoArrayLength = 36; //dinamic
+    const [videos, setVideos] = useState<Video[]>([]);
+
+    const videoArrayLength = videos.length; //dinamic
     const videosPerPage = 9;
     const totalPages = Math.ceil(videoArrayLength / videosPerPage);
 
     const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
+
+    useEffect(() => {
+        fetch('./videos.json')
+            .then(response => response.json())
+            .then(data => setVideos(data))
+            .catch(error => console.error(error));
+    }, []);
+
+    console.log(videos);
+
+    const displayedVideos = videos.slice((paginationId - 1) * videosPerPage, paginationId * videosPerPage);
+
+    console.log(displayedVideos);
 
     const HandleCardClick = (event: MouseEvent<HTMLDivElement>) => {
         setCardId(parseInt(event.currentTarget.id));
@@ -92,7 +116,14 @@ const VideosSection = () => {
                     </WrapperSelect>
                 </WrapperFilters>
                 <Line width='100%' margin='20px 0px' />
-                <p>TODO: Videos</p>
+                <GridVideos>
+                    {displayedVideos.map(video => (
+                        <Video>
+                            <ThumbnailImage src={Thumbnail} alt='Thumbnail video' widthintern='100%' />
+                            <TextStyled size='1rem'>{video.title}</TextStyled>
+                        </Video>
+                    ))}
+                </GridVideos>
                 <Line width='100%' margin='20px 0px' />
                 <WrapperPagination
                     align="center"

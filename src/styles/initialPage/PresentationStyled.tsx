@@ -2,7 +2,10 @@ import styled from "styled-components";
 
 import Image from "next/image";
 
+import { TextStyled } from "@/components/Text/TextStyled";
+
 import { Container } from "../globalStyles/Commom";
+import { Line } from "@/components/Line/LineStyled";
 
 export const ContainerPresentation = styled(Container)`
     min-height: calc(100vh - 80px);
@@ -20,8 +23,22 @@ export const ContainerAttention = styled.div`
 
 export const ImageStyled = styled(Image)`
     position: absolute;
-    inset: -5px -15px auto auto;
+    inset: -1px 2px auto auto;
+    height: auto;
     user-select: none;
+
+    @media (max-width: 670px) {
+        inset: -6px 1px auto auto;   
+    }
+
+    @media (max-width: 487px) {
+        inset: 48px 20px auto auto;
+    }
+
+    @media (max-width: 352px) {
+        width: 36px;
+        inset: 34px 30px auto auto;
+    }
 `;
 
 export const Holder = styled.div`
@@ -36,4 +53,33 @@ export const Holder = styled.div`
     text-align: center;
     text-transform: uppercase;
     user-select: none;
+`;
+
+export const TextConvertion = styled(TextStyled)`
+    margin: 0 25px;
+
+    @media (max-width: 670px) {
+        font-size: 3.5rem;
+    }
+
+    @media (max-width: 487px) {
+        width: 336px;
+    }
+
+    @media (max-width: 352px) {
+        width: 260px;
+        font-size: 2.5rem;
+    }
+`;
+
+export const TextChat = styled(TextStyled)`
+    @media (max-width: 352px) {
+        font-size: 1.5rem;
+    }
+`;
+
+export const LinePresentation = styled(Line)`
+    @media (max-width: 670px) {
+        width: 80%;       
+    }
 `;

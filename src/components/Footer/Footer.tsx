@@ -1,11 +1,11 @@
-import { SimpleImage, Wrapper } from "@/styles/globalStyles/Commom";
-
 import Logo from '@/assets/elements/logo.png';
 
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from 'react-icons/fa';
 
 import { ContainerFooter, Copyright, GridLinks, IconStyled, Items, LightLine } from "./FooterStyled";
 import { TextStyled } from "../Text/TextStyled";
+
+import { SimpleImage, Wrapper } from "@/styles/globalStyles/Commom";
 
 type LinksProps = {
     title: string,

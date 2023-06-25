@@ -1,34 +1,36 @@
 'use client'; // need to use it because  styled components does not support next 13 yet 
 
-import Asset from '@/assets/elements/asset-header.png';
 import Comparativo from '@/assets/elements/comparativo.png';
-import SeloRD from '@/assets/elements/selo_RD.png';
 import NoCard from '@/assets/elements/no-card-dark.webp';
+import Asset from '@/assets/elements/asset-header.png';
+import SeloRD from '@/assets/elements/selo_RD.png';
 import Rating from '@/assets/elements/rating.webp';
 
-import { TextStyled } from "@/components/Text/TextStyled";
-import { Line } from "@/components/Line/LineStyled";
-import { FilterCard } from '@/components/FilterCard/FilterStyled';
 import { PaginationNumber } from '@/components/PaginationNumbers/PaginationNumbers';
+import { FilterCard } from '@/components/FilterCard/FilterStyled';
+import { TextStyled } from "@/components/Text/TextStyled";
+import { Button } from '@/components/Button/ButtonStyled';
+import { Line } from "@/components/Line/LineStyled";
 
 import { Cards, ContainerVideos, SelectFilters, WrapperFilters, WrapperPagination, WrapperVideos } from '@/styles/initialPage/VideosStyled';
-import { ContainerAttention, ContainerPresentation, Holder, ImageStyled } from "@/styles/initialPage/PresentationStyled";
+import { ContainerAttention, ContainerPresentation, Holder, ImageStyled, TextConvertion, LinePresentation, TextChat } from "@/styles/initialPage/PresentationStyled";
 import { ContainerDemonstration, Separator } from '@/styles/initialPage/DemonstrationStyled';
 import { SimpleImage, Wrapper } from '@/styles/globalStyles/Commom';
-import { Button } from '@/components/Button/ButtonStyled';
 
 const Home = () => {
   return (
     <>
       <ContainerPresentation lightBg>
         <Holder>Webinars exclusivos</Holder>
-        <TextStyled size="2.5rem" weight="500" select='none'>Menos Conversinha,</TextStyled>
+        <TextChat size="2.5rem" align='center' weight="500" select='none'>Menos Conversinha,</TextChat>
         <ContainerAttention>
-          <TextStyled size="4.5rem" weight="bold" gradient select='none'>Mais Conversão</TextStyled>
-          <ImageStyled src={Asset} alt="" />
+          <TextConvertion size="4.5rem" weight="bold" align='center' gradient select='none'>
+            Mais Conversão
+          </TextConvertion>
+          <ImageStyled src={Asset} alt="Text asset" />
         </ContainerAttention>
-        <Line />
-        <TextStyled size="md" style={{ marginTop: '12px' }}>Conheça as estratégias que <span style={{ fontWeight: 700 }}>mudaram o jogo</span> e como aplicá-las no seu negócio</TextStyled>
+        <LinePresentation />
+        <TextStyled size="md" align='center' style={{ margin: '12px 10px' }}>Conheça as estratégias que <span style={{ fontWeight: 700 }}>mudaram o jogo</span> e como aplicá-las no seu negócio</TextStyled>
       </ContainerPresentation>
       <ContainerVideos>
         <WrapperVideos>

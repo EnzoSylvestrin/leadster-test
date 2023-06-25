@@ -20,7 +20,7 @@ export const FilterCard = styled.div`
     }
 
     &.active:hover {
-        background-color: #4877dd;
+        background-color: var(--hoverColor);
     }
 
     @media (max-width: 420px) {

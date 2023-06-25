@@ -10,6 +10,11 @@ const buttonStyles = `
     padding: 16px 24px;
     font-weight: bold;
     border: none;
+    cursor: pointer;
+
+    :hover {
+        background-color: var(--hoverColor);
+    }
 `
 
 export const Button = styled.button`

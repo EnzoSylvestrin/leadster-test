@@ -20,7 +20,9 @@ const Home = () => {
     <>
       <ContainerPresentation lightBg>
         <Holder>Webinars exclusivos</Holder>
-        <TextChat size="2.5rem" align='center' weight="500" select='none'>Menos Conversinha,</TextChat>
+        <TextChat size="2.5rem" align='center' weight="500" select='none'>
+          Menos Conversinha,
+        </TextChat>
         <ContainerAttention>
           <TextConvertion size="4.5rem" weight="bold" align='center' gradient select='none'>
             Mais Conversão
@@ -56,7 +58,7 @@ const Home = () => {
             </TextStyled>
             <Separator />
             <SimpleImage src={Rating} alt='Avaliação' widthintern='auto' />
-            <TextStyled size='0.825rem'>4.9/5 média de satisfação</TextStyled>
+            <TextStyled size='0.825rem'><span style={{ fontWeight: 'bold' }}>4.9</span>/5 média de satisfação</TextStyled>
           </Wrapper>
         </Wrapper>
       </ContainerDemonstration>

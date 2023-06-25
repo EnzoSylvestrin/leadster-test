@@ -73,6 +73,7 @@ export const TextConvertion = styled(TextStyled)`
 `;
 
 export const TextChat = styled(TextStyled)`
+    margin: 0 12px;
     @media (max-width: 352px) {
         font-size: 1.5rem;
     }

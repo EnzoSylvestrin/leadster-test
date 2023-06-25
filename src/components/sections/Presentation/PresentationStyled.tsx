@@ -39,7 +39,6 @@ export const ImageAnimation = styled(motion.div)`
     @media (max-width: 352px) {
         inset: 34px 30px auto auto;
     }
-
 `;
 
 export const ImageStyled = styled(Image)`

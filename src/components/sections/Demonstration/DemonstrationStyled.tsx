@@ -4,6 +4,8 @@ import { TextStyled } from "@/components/Text/TextStyled";
 
 import { Container, SimpleImage, Wrapper } from "../../../styles/globalStyles/Commom";
 
+import { motion } from 'framer-motion';
+
 export const ContainerDemonstration = styled(Container)`
     display: flex;
     align-items: center;
@@ -44,6 +46,10 @@ export const Separator = styled.div`
     @media (max-width: 1052px) {
         background-color: transparent;        
     }
+`;
+
+export const ComparationImageAnimation = styled(motion.div)`
+
 `;
 
 export const ComparationImage = styled(SimpleImage)`

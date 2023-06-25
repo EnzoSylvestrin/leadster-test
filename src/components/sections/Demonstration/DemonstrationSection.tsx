@@ -7,7 +7,7 @@ import { Button } from "@/components/Button/ButtonStyled";
 import { Line } from "@/components/Line/LineStyled";
 import { TextStyled } from "@/components/Text/TextStyled";
 
-import { ContainerDemonstration, ComparationImage, WrapperText, TextReady, TextCriation, WrapperButton, WrapperNotes, Separator } from "./DemonstrationStyled";
+import { ContainerDemonstration, ComparationImage, WrapperText, TextReady, TextCriation, WrapperButton, WrapperNotes, Separator, ComparationImageAnimation } from "./DemonstrationStyled";
 
 import { Wrapper, SimpleImage } from "@/styles/globalStyles/Commom";
 
@@ -15,9 +15,27 @@ const DemonstrationSection = () => {
     return (
         <ContainerDemonstration lightBg>
             <Wrapper align='center' justify='center'>
-                <ComparationImage src={Comparativo} alt='Leadter results' widthintern='550px' quality={100} />
+                <ComparationImageAnimation
+                    initial={{ opacity: 0 }}
+                    whileInView={{
+                        opacity: 1,
+                        transition: { duration: 0.5 },
+                    }}
+                    viewport={{ once: true }}
+                >
+                    <ComparationImage src={Comparativo} alt='Leadter results' widthintern='550px' quality={100} />
+                </ComparationImageAnimation>
             </Wrapper>
-            <WrapperText direction='column'>
+            <WrapperText
+                direction='column'
+                initial={{ opacity: 0.2, x: 300 }}
+                whileInView={{
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.8, type: 'spring' },
+                }}
+                viewport={{ once: true }}
+            >
                 <TextReady size='2rem' line={1.300}>
                     Pronto para triplicar sua <br />
                     <span style={{ fontWeight: '700' }}>Geração de leads?</span>

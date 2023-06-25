@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 type TextProps = {
     size: 'sm' | 'md' | 'lg' | string,
-    align?: 'left' | 'center' | 'right'
+    textAlign?: 'left' | 'center' | 'right'
     color?: string | 'main',
     gradient?: boolean,
     weight?: "bold" | string,
@@ -20,7 +20,7 @@ export const TextStyled = styled.p<TextProps>`
                     ? '1.125rem'
                     : props.size
     };
-    text-align: ${props => props.align ?? 'left'};
+    text-align: ${props => props.textAlign ?? 'left'};
     font-weight: ${props => props.weight ?? 'normal'};
     user-select:  ${props => props.select ?? 'normal'};
     line-height: ${props => props.line ?? '1'};

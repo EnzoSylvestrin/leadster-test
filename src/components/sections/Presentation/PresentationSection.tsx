@@ -8,11 +8,11 @@ const PresentationSection = () => {
     return (
         <ContainerPresentation lightBg>
             <Holder>Webinars exclusivos</Holder>
-            <TextChat size="2.5rem" align='center' weight="500" select='none'>
+            <TextChat size="2.5rem" textAlign='center' weight="500" select='none'>
                 Menos Conversinha,
             </TextChat>
             <ContainerAttention>
-                <TextConvertion size="4.5rem" weight="bold" align='center' gradient select='none'>
+                <TextConvertion size="4.5rem" weight="bold" textAlign='center' gradient select='none'>
                     Mais Conversão
                 </TextConvertion>
                 <ImageAnimation
@@ -27,7 +27,7 @@ const PresentationSection = () => {
                 </ImageAnimation>
             </ContainerAttention>
             <LinePresentation />
-            <TextStyled size="md" align='center' style={{ margin: '12px 10px' }}>Conheça as estratégias que <span style={{ fontWeight: 700 }}>mudaram o jogo</span> e como aplicá-las no seu negócio</TextStyled>
+            <TextStyled size="md" textAlign='center' style={{ margin: '12px 10px' }}>Conheça as estratégias que <span style={{ fontWeight: 700 }}>mudaram o jogo</span> e como aplicá-las no seu negócio</TextStyled>
         </ContainerPresentation>
     );
 }

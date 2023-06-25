@@ -2,13 +2,16 @@ import { useState, MouseEvent, useEffect } from 'react';
 
 import Thumbnail from '@/assets/elements/thumbnail.png';
 
+import { FaPlay } from 'react-icons/fa';
+
 import { PaginationNumber } from "../../PaginationNumbers/PaginationNumbers";
 import { FilterCard } from "../../FilterCard/FilterStyled";
 import { TextStyled, } from "../../Text/TextStyled";
 import { Select } from "../../Select/SelectStyled";
 import { Line } from "../../Line/LineStyled";
 
-import { ContainerVideos, WrapperVideos, WrapperFilters, WrapperCards, WrapperSelect, WrapperPagination, GridVideos, Video, ThumbnailImage } from "./VideosStyled";
+import { ContainerVideos, WrapperVideos, WrapperFilters, WrapperCards, WrapperSelect, GridVideos, Video, ThumbnailImage, OverlayImage, PlayButton } from "./VideosStyled";
+import { Wrapper } from '@/styles/globalStyles/Commom';
 
 type CardObject = {
     name: string,
@@ -102,7 +105,7 @@ const VideosSection = () => {
                         }}
                         viewport={{ once: true }}
                     >
-                        <TextStyled align='center' size='1rem'>Ordenar por</TextStyled>
+                        <TextStyled textAlign='center' size='1rem'>Ordenar por</TextStyled>
                         <Select> {/* Select é normalmente usado de alguma biblioteca, nesse caso simples usado do browser por não saber as especificações */}
                             <option>Data de publicação</option>
                             <option>Option 1</option>
@@ -115,13 +118,19 @@ const VideosSection = () => {
                 <GridVideos>
                     {displayedVideos.map((video, i) => (
                         <Video key={i} id={`${i}`}>
-                            <ThumbnailImage src={Thumbnail} alt='Thumbnail video' widthintern='100%' />
+                            <div style={{ position: 'relative' }}>
+                                <OverlayImage className="overlay" />
+                                <PlayButton className='play'>
+                                    <FaPlay size={"100%"} color='#fff' />
+                                </PlayButton>
+                                <ThumbnailImage src={Thumbnail} alt='Thumbnail video' widthintern='100%' />
+                            </div>
                             <TextStyled size='1rem'>{video.title}</TextStyled>
                         </Video>
                     ))}
                 </GridVideos>
                 <Line width='100%' margin='20px 0px' />
-                <WrapperPagination
+                <Wrapper
                     align="center"
                     justify="center"
                     gap="4px"
@@ -137,7 +146,7 @@ const VideosSection = () => {
                         pageNumbers.map((pageNumber, i) => (
                             <PaginationNumber
                                 key={i}
-                                id={`${i}`}
+                                id={`${i + 1}`}
                                 className={paginationId === i ? 'active' : ''}
                                 onClick={HandlePaginationClick}
                             >
@@ -145,7 +154,7 @@ const VideosSection = () => {
                             </PaginationNumber>
                         ))
                     }
-                </WrapperPagination>
+                </Wrapper>
             </WrapperVideos>
         </ContainerVideos>
     );

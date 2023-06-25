@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 import { TextStyled } from "@/components/Text/TextStyled";
 
-import { Container } from "../globalStyles/Commom";
+import { Container } from "../../../styles/globalStyles/Commom";
 import { Line } from "@/components/Line/LineStyled";
 
 export const ContainerPresentation = styled(Container)`

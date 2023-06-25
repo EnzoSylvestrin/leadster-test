@@ -1,10 +1,10 @@
 import { useState, MouseEvent } from 'react';
 
-import { PaginationNumber } from "../PaginationNumbers/PaginationNumbers";
-import { FilterCard } from "../FilterCard/FilterStyled";
-import { TextStyled, } from "../Text/TextStyled";
-import { Select } from "../Select/SelectStyled";
-import { Line } from "../Line/LineStyled";
+import { PaginationNumber } from "../../PaginationNumbers/PaginationNumbers";
+import { FilterCard } from "../../FilterCard/FilterStyled";
+import { TextStyled, } from "../../Text/TextStyled";
+import { Select } from "../../Select/SelectStyled";
+import { Line } from "../../Line/LineStyled";
 
 import { ContainerVideos, WrapperVideos, WrapperFilters, WrapperCards, WrapperSelect, WrapperPagination } from "./VideosStyled";
 

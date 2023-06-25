@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { TextStyled } from "@/components/Text/TextStyled";
 
-import { Container, SimpleImage, Wrapper } from "../globalStyles/Commom";
+import { Container, SimpleImage, Wrapper } from "../../../styles/globalStyles/Commom";
 
 export const ContainerDemonstration = styled(Container)`
     display: flex;

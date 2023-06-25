@@ -14,7 +14,8 @@ export const ContainerVideos = styled(Container)`
 export const GridVideos = styled(motion.div)`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 20px 30px;
+    margin: 30px 0px;
 `;
 
 export const ThumbnailImage = styled(SimpleImage)`
@@ -26,10 +27,10 @@ export const Video = styled(motion.div)`
     flex-direction: column;
     gap: 20px;
     border-radius: 0px 0px 8px 8px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
 
     p {
-        padding: 0px 10px;
+        padding: 10px 10px 10px 15px;
         margin-bottom: 10px;
     }
 

@@ -49,11 +49,7 @@ const VideosSection = () => {
             .catch(error => console.error(error));
     }, []);
 
-    console.log(videos);
-
     const displayedVideos = videos.slice((paginationId - 1) * videosPerPage, paginationId * videosPerPage);
-
-    console.log(displayedVideos);
 
     const HandleCardClick = (event: MouseEvent<HTMLDivElement>) => {
         setCardId(parseInt(event.currentTarget.id));
@@ -117,8 +113,8 @@ const VideosSection = () => {
                 </WrapperFilters>
                 <Line width='100%' margin='20px 0px' />
                 <GridVideos>
-                    {displayedVideos.map(video => (
-                        <Video>
+                    {displayedVideos.map((video, i) => (
+                        <Video key={i} id={`${i}`}>
                             <ThumbnailImage src={Thumbnail} alt='Thumbnail video' widthintern='100%' />
                             <TextStyled size='1rem'>{video.title}</TextStyled>
                         </Video>

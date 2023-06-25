@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import Link from "next/link";
+
 export const ContainerFooter = styled.footer`
     width: 100%;
     display: flex;
@@ -29,13 +31,32 @@ export const Items = styled.div<{ marginBottom?: string }>`
     }
 `;
 
-export const IconStyled = styled.div`
+export const FooterLink = styled(Link)`
+    color: #969696;
+    font-size: 0.875rem;
+    transition: all 0.4s ease;
+
+    :hover {
+        color: #101010;
+    }
+`;
+
+export const IconStyled = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     background-color: #e2e2e2;
     padding: 12px;
+    transition: all 0.4s ease;
+
+    :hover {
+        background-color: var(--main);
+    }
+
+    :hover svg {
+        color: #fff !important;
+    }
 `;
 
 export const LightLine = styled.div`

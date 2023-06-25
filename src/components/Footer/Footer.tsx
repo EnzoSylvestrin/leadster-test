@@ -2,7 +2,7 @@ import Logo from '@/assets/elements/logo.png';
 
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from 'react-icons/fa';
 
-import { ContainerFooter, Copyright, GridLinks, IconStyled, Items, LightLine } from "./FooterStyled";
+import { ContainerFooter, Copyright, FooterLink, GridLinks, IconStyled, Items, LightLine } from "./FooterStyled";
 import { TextStyled } from "../Text/TextStyled";
 
 import { SimpleImage, Wrapper } from "@/styles/globalStyles/Commom";
@@ -63,13 +63,12 @@ const Footer = () => {
                                 {title.title}
                             </h2>
                             {title.links.map((link, i) => (
-                                <a
+                                <FooterLink
                                     key={i}
                                     href={link.href}
-                                    style={{ color: '#969696', fontSize: '0.875rem' }}
                                 >
                                     {link.name}
-                                </a>
+                                </FooterLink>
                             ))}
                         </Items>
                     ))
@@ -79,15 +78,15 @@ const Footer = () => {
                         Siga a Leadster
                     </h2>
                     <Wrapper gap="8px">
-                        <IconStyled><FaLinkedinIn size={16} color="#727272" /></IconStyled>
-                        <IconStyled><FaFacebookF size={16} color="#727272" /></IconStyled>
-                        <IconStyled><FaInstagram size={16} color="#727272" /></IconStyled>
+                        <IconStyled href='#'><FaLinkedinIn size={16} color="#727272" /></IconStyled>
+                        <IconStyled href='#'><FaFacebookF size={16} color="#727272" /></IconStyled>
+                        <IconStyled href='#'><FaInstagram size={16} color="#727272" /></IconStyled>
                     </Wrapper>
                     <TextStyled size="0.875rem">
-                        Email: <a href={"mailto:contato@leadster.com.br"} style={{ color: '#969696' }}>contato@leadster.com.br</a>
+                        Email: <FooterLink href={"mailto:contato@leadster.com.br"}>contato@leadster.com.br</FooterLink>
                     </TextStyled>
                     <TextStyled size="0.875rem">
-                        Telefone: <a href={"#"} style={{ color: '#969696' }}>(42) 98928-9851</a>
+                        Telefone: <FooterLink href={"#"}>(42) 98928-9851</FooterLink>
                     </TextStyled>
                 </Items>
             </GridLinks>

@@ -5,6 +5,7 @@ export const PaginationNumber = styled.div`
     padding: 6px 10px;
     border: 1px solid transparent;
     user-select: none;
+    cursor: pointer;
 
     &.active {
         border-color: var(--main);

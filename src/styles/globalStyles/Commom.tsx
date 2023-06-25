@@ -14,7 +14,7 @@ type WrapperProps = {
     gap?: string,
     width?: string,
     align?: 'start' | 'center' | 'end',
-    justify?: 'start' | 'center' | 'end',
+    justify?: 'start' | 'center' | 'end' | 'space-between',
     direction?: 'row' | 'column',
     margin?: string,
 }

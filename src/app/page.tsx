@@ -10,9 +10,10 @@ import { PaginationNumber } from '@/components/PaginationNumbers/PaginationNumbe
 import { FilterCard } from '@/components/FilterCard/FilterStyled';
 import { TextStyled } from "@/components/Text/TextStyled";
 import { Button } from '@/components/Button/ButtonStyled';
+import { Select } from '@/components/Select/SelectStyled';
 import { Line } from "@/components/Line/LineStyled";
 
-import { Cards, ContainerVideos, SelectFilters, WrapperFilters, WrapperPagination, WrapperVideos } from '@/styles/initialPage/VideosStyled';
+import { ContainerVideos, WrapperCards, WrapperFilters, WrapperPagination, WrapperSelect, WrapperVideos } from '@/styles/initialPage/VideosStyled';
 import { ContainerAttention, ContainerPresentation, Holder, ImageStyled, TextConvertion, LinePresentation, TextChat } from "@/styles/initialPage/PresentationStyled";
 import { ContainerDemonstration, Separator } from '@/styles/initialPage/DemonstrationStyled';
 import { SimpleImage, Wrapper } from '@/styles/globalStyles/Commom';
@@ -33,26 +34,29 @@ const Home = () => {
         <TextStyled size="md" align='center' style={{ margin: '12px 10px' }}>Conheça as estratégias que <span style={{ fontWeight: 700 }}>mudaram o jogo</span> e como aplicá-las no seu negócio</TextStyled>
       </ContainerPresentation>
       <ContainerVideos>
-        <WrapperVideos>
-          <WrapperFilters>
-            <Cards>
+        <WrapperVideos direction="column" align="center" justify='center' width="80%">
+          <WrapperFilters align="center" justify='space-between' width='100%'>
+            <WrapperCards width='auto' align="center" justify="center" gap="8px">
               <FilterCard>Agências</FilterCard>
               <FilterCard>ChatBot</FilterCard>
               <FilterCard>Marketing Digital</FilterCard>
-              <FilterCard>Geração de Leads</FilterCard>
+              <FilterCard className='active'>Geração de Leads</FilterCard>
               <FilterCard>Mídia paga</FilterCard>
-            </Cards>
-            <SelectFilters>
-              <TextStyled size='1rem'>Ordenar por</TextStyled>
-              <select>
-                <option value='teste'>teste</option>
-              </select>
-            </SelectFilters>
+            </WrapperCards>
+            <WrapperSelect width='auto' align="center" justify="center" gap='8px'>
+              <TextStyled align='center' size='1rem'>Ordenar por</TextStyled>
+              <Select> {/* Select é normalmente usado de alguma biblioteca, nesse caso simples usado do browser por não saber as especificações */}
+                <option>Data de publicação</option>
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </Select>
+            </WrapperSelect>
           </WrapperFilters>
           <Line width='100%' margin='20px 0px' />
           <p>TODO: Videos</p>
           <Line width='100%' margin='20px 0px' />
-          <WrapperPagination>
+          <WrapperPagination align="center" justify="center" gap="4px">
             <TextStyled size="1rem" weight='700' style={{ marginRight: '2px' }}>Página</TextStyled>
             <PaginationNumber>1</PaginationNumber>
             <PaginationNumber>2</PaginationNumber>

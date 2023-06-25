@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Container } from "../globalStyles/Commom";
+
+import { Container, Wrapper } from "../globalStyles/Commom";
 
 export const ContainerVideos = styled(Container)`
     margin: 40px 0;
@@ -8,38 +9,35 @@ export const ContainerVideos = styled(Container)`
     align-items: center;
 `;
 
-export const WrapperVideos = styled.div`
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+export const WrapperVideos = styled(Wrapper)`
+    @media (max-width: 1020px) {
+        width: 85%;
+    }
+
+    @media (max-width: 768px) {
+        width: 93%;
+    }
 `;
 
-export const WrapperFilters = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+export const WrapperFilters = styled(Wrapper)`
+    flex-wrap: wrap;
 `;
 
-export const Cards = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-`
-
-export const SelectFilters = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+export const WrapperPagination = styled(Wrapper)`
 `;
 
-export const WrapperPagination = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
+export const WrapperCards = styled(Wrapper)`
+    flex-wrap: wrap;
+
+    @media (max-width: 1100px) {
+        width: 100%;
+    }
+`;
+
+export const WrapperSelect = styled(Wrapper)`
+
+    @media (max-width: 1100px) {
+        margin-top: 16px;
+        width: 100%;
+    }
 `;

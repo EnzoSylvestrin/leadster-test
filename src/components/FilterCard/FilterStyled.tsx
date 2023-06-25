@@ -12,4 +12,23 @@ export const FilterCard = styled.div`
         border-color: var(--main);
         color: var(--main);
     }
+
+    &.active {
+        background-color: var(--main);
+        color: #fff;
+        border: 1px solid transparent;
+    }
+
+    &.active:hover {
+        background-color: #4877dd;
+    }
+
+    @media (max-width: 420px) {
+        width: 80%;
+        text-align: center;
+    }
+
+    @media (max-width: 320px) {
+        width: 95%;
+    }
 `;

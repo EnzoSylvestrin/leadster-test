@@ -1,5 +1,8 @@
 import Image from "next/image";
+
 import styled from "styled-components";
+
+import { motion } from 'framer-motion';
 
 type ContainerProps = {
     lightBg?: boolean
@@ -19,7 +22,7 @@ type WrapperProps = {
     margin?: string,
 }
 
-export const Wrapper = styled.div<WrapperProps>`
+export const Wrapper = styled(motion.div) <WrapperProps>`
     display: flex;
     width: ${props => props.width ?? '100%'};
     gap: ${props => props.gap ?? '0px'};

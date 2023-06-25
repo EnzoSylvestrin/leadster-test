@@ -7,6 +7,7 @@ export const FilterCard = styled.div`
     font-size: 1rem;
     cursor: pointer;
     user-select: none;
+    transition: all 0.4s ease;
 
     :hover {
         border-color: var(--main);

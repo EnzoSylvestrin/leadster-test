@@ -43,7 +43,19 @@ const VideosSection = () => {
         <ContainerVideos>
             <WrapperVideos direction="column" align="center" justify='center' width="80%">
                 <WrapperFilters align="center" justify='space-between' width='100%'>
-                    <WrapperCards width='auto' align="center" justify="center" gap="8px">
+                    <WrapperCards
+                        width='auto'
+                        align="center"
+                        justify="center"
+                        gap="8px"
+                        initial={{ x: -100, opacity: 0.2 }}
+                        whileInView={{
+                            opacity: 1,
+                            x: 0,
+                            transition: { duration: 0.5, type: 'spring', stiffness: 200, damping: 20 },
+                        }}
+                        viewport={{ once: true }}
+                    >
                         {
                             FilterCards.map((filter, i) => (
                                 <FilterCard
@@ -57,7 +69,19 @@ const VideosSection = () => {
                             ))
                         }
                     </WrapperCards>
-                    <WrapperSelect width='auto' align="center" justify="center" gap='8px'>
+                    <WrapperSelect
+                        width='auto'
+                        align="center"
+                        justify="center"
+                        gap='8px'
+                        initial={{ x: 100, opacity: 0.2 }}
+                        whileInView={{
+                            opacity: 1,
+                            x: 0,
+                            transition: { duration: 0.5, type: 'spring', stiffness: 200, damping: 20 },
+                        }}
+                        viewport={{ once: true }}
+                    >
                         <TextStyled align='center' size='1rem'>Ordenar por</TextStyled>
                         <Select> {/* Select é normalmente usado de alguma biblioteca, nesse caso simples usado do browser por não saber as especificações */}
                             <option>Data de publicação</option>
@@ -70,7 +94,17 @@ const VideosSection = () => {
                 <Line width='100%' margin='20px 0px' />
                 <p>TODO: Videos</p>
                 <Line width='100%' margin='20px 0px' />
-                <WrapperPagination align="center" justify="center" gap="4px">
+                <WrapperPagination
+                    align="center"
+                    justify="center"
+                    gap="4px"
+                    initial={{ opacity: 0 }}
+                    whileInView={{
+                        opacity: 1,
+                        transition: { duration: 0.5 },
+                    }}
+                    viewport={{ once: true }}
+                >
                     <TextStyled size="1rem" weight='700' style={{ marginRight: '2px' }}>Página</TextStyled>
                     {
                         pageNumbers.map((pageNumber, i) => (

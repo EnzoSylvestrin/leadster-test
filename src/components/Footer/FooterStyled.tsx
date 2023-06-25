@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import Link from "next/link";
+import { Wrapper } from "@/styles/globalStyles/Commom";
 
 export const ContainerFooter = styled.footer`
     width: 100%;
@@ -18,6 +19,11 @@ export const GridLinks = styled.div`
     gap: 8px;
     margin: 30px 0;
     width: 100%;
+    flex-wrap: wrap;
+
+    @media (max-width: 840px) {
+        gap: 20px;
+    }
 `;
 
 export const Items = styled.div<{ marginBottom?: string }>`
@@ -29,6 +35,21 @@ export const Items = styled.div<{ marginBottom?: string }>`
     h2 {
         margin-bottom: ${props => props.marginBottom ?? '20px'};
     }
+
+    @media (max-width: 840px) {
+        width: 45%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    @media (max-width: 470px) {
+        width: 90%;
+
+        h2 {
+            margin-bottom: 8px;
+        }
+    }
 `;
 
 export const FooterLink = styled(Link)`
@@ -38,6 +59,13 @@ export const FooterLink = styled(Link)`
 
     :hover {
         color: #101010;
+    }
+`;
+
+export const WrapperIcons = styled(Wrapper)`
+    @media (max-width: 840px) {
+        align-items: center;
+        justify-content: center;
     }
 `;
 
@@ -66,9 +94,17 @@ export const LightLine = styled.div`
     margin: 20px;
 `;
 
-export const Copyright = styled.div`
-    width: 82%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+export const Copyright = styled(Wrapper)`
+    flex-wrap: wrap;
+
+    @media (max-width: 1002px) {
+        gap: 12px;
+        
+        p {
+            width: 100%;
+            text-align: center;
+        }
+
+        justify-content: center;
+    }
 `;

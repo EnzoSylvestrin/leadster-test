@@ -2,7 +2,7 @@ import Logo from '@/assets/elements/logo.png';
 
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from 'react-icons/fa';
 
-import { ContainerFooter, Copyright, FooterLink, GridLinks, IconStyled, Items, LightLine } from "./FooterStyled";
+import { ContainerFooter, Copyright, FooterLink, GridLinks, IconStyled, Items, LightLine, WrapperIcons } from "./FooterStyled";
 import { TextStyled } from "../Text/TextStyled";
 
 import { SimpleImage, Wrapper } from "@/styles/globalStyles/Commom";
@@ -77,11 +77,11 @@ const Footer = () => {
                     <h2 style={{ fontSize: '1.125rem' }}>
                         Siga a Leadster
                     </h2>
-                    <Wrapper gap="8px">
+                    <WrapperIcons gap="8px">
                         <IconStyled href='#'><FaLinkedinIn size={16} color="#727272" /></IconStyled>
                         <IconStyled href='#'><FaFacebookF size={16} color="#727272" /></IconStyled>
                         <IconStyled href='#'><FaInstagram size={16} color="#727272" /></IconStyled>
-                    </Wrapper>
+                    </WrapperIcons>
                     <TextStyled size="0.875rem">
                         Email: <FooterLink href={"mailto:contato@leadster.com.br"}>contato@leadster.com.br</FooterLink>
                     </TextStyled>
@@ -91,7 +91,7 @@ const Footer = () => {
                 </Items>
             </GridLinks>
             <LightLine />
-            <Copyright>
+            <Copyright width="82%" align="center" justify='space-between'>
                 <TextStyled size="0.750rem" style={{ color: '#969696' }}>
                     Copyright @ 2015 - 2022 todos os direitos reservados | <a href="#" style={{ color: "#0961d3" }}>Leadster</a>
                 </TextStyled>

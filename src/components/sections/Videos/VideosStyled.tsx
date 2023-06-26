@@ -81,9 +81,6 @@ export const PlayButton = styled.div`
     transform: translate(50%, -50%);
 `;
 
-export const ModalWrapper = styled(Wrapper)`
-`;
-
 export const WrapperVideos = styled(Wrapper)`
     @media (max-width: 1020px) {
         width: 85%;
@@ -118,6 +115,7 @@ export const DialogOverlay = styled(Dialog.Overlay)`
     background-color: rgba(10, 10, 10, 0.2);
     position: fixed;
     inset: 0;
+    z-index: 3;
 `;
 
 export const DialogContent = styled(Dialog.Content)`
@@ -136,6 +134,7 @@ export const DialogContent = styled(Dialog.Content)`
     min-width: 300px;
     transform: translate(-50%, -50%);
     outline: 0;
+    z-index: 3;
 `;
 
 export const DialogClose = styled(Dialog.Close)`

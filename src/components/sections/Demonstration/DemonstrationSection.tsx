@@ -14,7 +14,7 @@ import { Wrapper, SimpleImage } from "@/styles/globalStyles/Commom";
 const DemonstrationSection = () => {
     return (
         <ContainerDemonstration lightBg>
-            <Wrapper align='center' justify='center'>
+            <Wrapper align='center' justify='center' style={{ position: 'relative' }}>
                 <ComparationImageAnimation
                     initial={{ opacity: 0 }}
                     whileInView={{

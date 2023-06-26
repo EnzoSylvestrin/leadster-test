@@ -53,7 +53,9 @@ export const ComparationImageAnimation = styled(motion.div)`
 `;
 
 export const ComparationImage = styled(SimpleImage)`
-    
+    z-index: 3;
+    position: relative;
+
     @media (max-width: 1100px) {
         width: 450px;
     }

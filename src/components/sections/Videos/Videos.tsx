@@ -159,7 +159,7 @@ const VideosSection = () => {
                     <Dialog.Portal>
                         <DialogOverlay />
                         <DialogContent>
-                            <DialogClose asChild>
+                            <DialogClose data-testId="dialog-close-button" asChild>
                                 <AiOutlineClose size={16} color='#b6b5b5' />
                             </DialogClose>
                             <DialogTitle size='1rem' weight="700"><span style={{ color: 'var(--main)' }}>Webinar: </span>{videos[videoId]?.title}</DialogTitle>

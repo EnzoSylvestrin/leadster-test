@@ -14,6 +14,8 @@ server side rendering do next.
 
 Utilizei a biblioteca framer motion para criar animações de scroll e inicialização e a biblioteca React Icons para os icones do projeto.
 
+Além do storybook para documentação dos componentes principais.
+
 ## 📚 Organização: 
 
 Organizei meu código a partir da componentização, separando componentes utilitários como: botões, selects, linhas e vários outros, e sessões como: Apresentação e 
@@ -52,7 +54,12 @@ e por fim execute o projeto utilizando o comando:
 npm run dev
 ```
 
-então é só abrir o endereço http://localhost:3000 e visualizar o projeto! 
+então é só abrir o endereço http://localhost:3000 e visualizar o projeto!
+
+você também pode ver o storybook utilizando o comando:
+```
+npm run storybook
+```
 
 para ver o projeto na vercel clique <a href="https://leadster-test.vercel.app">aqui</a>
 

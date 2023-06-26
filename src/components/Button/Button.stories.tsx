@@ -6,12 +6,10 @@ const meta: Meta<typeof Button> = {
     title: 'Components/Button',
     component: Button,
     tags: ['autodocs'],
-
 };
 
 export default meta;
-type Story = StoryObj<typeof Button>;
 
-export const Default: Story = {
-
+export const Default = () => {
+    return <Button>Texto de exemplo</Button>
 };

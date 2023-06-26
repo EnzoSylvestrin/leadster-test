@@ -133,7 +133,17 @@ const VideosSection = () => {
                 <Line width='100%' margin='20px 0px' />
                 <GridVideos>
                     {displayedVideos.map((video, i) => (
-                        <Video key={i} id={`${i}`} onClick={OpenModal}>
+                        <Video
+                            key={i}
+                            id={`${i}`}
+                            onClick={OpenModal}
+                            initial={{ opacity: 0.2 }}
+                            whileInView={{
+                                opacity: 1,
+                                transition: { duration: 0.6 },
+                            }}
+                            viewport={{ once: true }}
+                        >
                             <div style={{ position: 'relative' }}>
                                 <OverlayImage className="overlay" />
                                 <PlayButton className='play'>

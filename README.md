@@ -61,6 +61,11 @@ você também pode ver o storybook utilizando o comando:
 npm run storybook
 ```
 
+e por ultimo mas não menos importante para rodar os testes utilize o comando:
+```
+npm run test
+```
+
 para ver o projeto na vercel clique <a href="https://leadster-test.vercel.app">aqui</a>
 
 

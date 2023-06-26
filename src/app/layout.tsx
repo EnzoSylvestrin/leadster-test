@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 import '../styles/globalStyles/globals.css';
-import 'react-loading-skeleton/dist/skeleton.css'
+import 'react-loading-skeleton/dist/skeleton.css';
 
 import { Container } from '@/styles/globalStyles/Main';
 

@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta } from '@storybook/react';
 
-import { Button } from './ButtonStyled';
+import { Button, ButtonLink, ButtonNextLink } from './ButtonStyled';
 
 const meta: Meta<typeof Button> = {
     title: 'Components/Button',
@@ -12,4 +12,12 @@ export default meta;
 
 export const Default = () => {
     return <Button>Texto de exemplo</Button>
+};
+
+export const LinkButton = () => {
+    return <ButtonLink>Texto de exemplo</ButtonLink>
+};
+
+export const LinkNextButton = () => {
+    return <ButtonNextLink href={'#'}>Texto de exemplo</ButtonNextLink>
 };

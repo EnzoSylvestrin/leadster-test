@@ -1,6 +1,7 @@
 import type { Preview } from '@storybook/react';
 
 import '../src/styles/globalStyles/globals.css';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 import { createGlobalStyle } from 'styled-components';
 import { withThemeFromJSXProvider } from '@storybook/addon-styling';

@@ -11,6 +11,7 @@ const buttonStyles = `
     font-weight: bold;
     border: none;
     cursor: pointer;
+    width: fit-content;
 
     :hover {
         background-color: var(--hoverColor);

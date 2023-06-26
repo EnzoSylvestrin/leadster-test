@@ -3,6 +3,7 @@ import { useState, MouseEvent, useEffect } from 'react';
 import Thumbnail from '@/assets/elements/thumbnail.png';
 
 import { FaPlay } from 'react-icons/fa';
+import { AiOutlineClose, AiOutlineCloudDownload } from 'react-icons/ai';
 
 import { PaginationNumber } from "../../PaginationNumbers/PaginationNumbers";
 import { FilterCard } from "../../FilterCard/FilterStyled";
@@ -10,7 +11,9 @@ import { TextStyled, } from "../../Text/TextStyled";
 import { Select } from "../../Select/SelectStyled";
 import { Line } from "../../Line/LineStyled";
 
-import { ContainerVideos, WrapperVideos, WrapperFilters, WrapperCards, WrapperSelect, GridVideos, Video, ThumbnailImage, OverlayImage, PlayButton } from "./VideosStyled";
+import * as Dialog from '@radix-ui/react-dialog';
+
+import { ContainerVideos, WrapperVideos, WrapperFilters, WrapperCards, WrapperSelect, GridVideos, Video, ThumbnailImage, OverlayImage, PlayButton, DialogOverlay, DialogContent, DialogClose, DialogTitle, DownloadButtons } from "./VideosStyled";
 import { Wrapper } from '@/styles/globalStyles/Commom';
 
 type CardObject = {
@@ -29,6 +32,9 @@ const VideosSection = () => {
     const [cardId, setCardId] = useState<number>(3);
     const [paginationId, setPaginationId] = useState<number>(1);
 
+    const [videoId, setVideoId] = useState<number>(1);
+    const [isOpen, setIsOpen] = useState(false);
+
     const FilterCards: CardObject[] = [
         { name: 'Agências' },
         { name: 'ChatBot' },
@@ -39,7 +45,7 @@ const VideosSection = () => {
 
     const [videos, setVideos] = useState<Video[]>([]);
 
-    const videoArrayLength = videos.length; //dinamic
+    const videoArrayLength = videos.length;
     const videosPerPage = 9;
     const totalPages = Math.ceil(videoArrayLength / videosPerPage);
 
@@ -53,6 +59,16 @@ const VideosSection = () => {
     }, []);
 
     const displayedVideos = videos.slice((paginationId - 1) * videosPerPage, paginationId * videosPerPage);
+
+    const OpenModal = (event: MouseEvent<HTMLDivElement>) => {
+        setVideoId(parseInt(event.currentTarget.id));
+        setIsOpen(true);
+    }
+
+    const CloseModal = () => {
+        setVideoId(1);
+        setIsOpen(false);
+    }
 
     const HandleCardClick = (event: MouseEvent<HTMLDivElement>) => {
         setCardId(parseInt(event.currentTarget.id));
@@ -117,7 +133,7 @@ const VideosSection = () => {
                 <Line width='100%' margin='20px 0px' />
                 <GridVideos>
                     {displayedVideos.map((video, i) => (
-                        <Video key={i} id={`${i}`}>
+                        <Video key={i} id={`${i}`} onClick={OpenModal}>
                             <div style={{ position: 'relative' }}>
                                 <OverlayImage className="overlay" />
                                 <PlayButton className='play'>
@@ -129,6 +145,51 @@ const VideosSection = () => {
                         </Video>
                     ))}
                 </GridVideos>
+                <Dialog.Root open={isOpen} onOpenChange={CloseModal}>
+                    <Dialog.Portal>
+                        <DialogOverlay />
+                        <DialogContent>
+                            <DialogClose asChild>
+                                <AiOutlineClose size={16} color='#b6b5b5' />
+                            </DialogClose>
+                            <DialogTitle size='1rem' weight="700"><span style={{ color: 'var(--main)' }}>Webinar: </span>{videos[videoId]?.title}</DialogTitle>
+                            <iframe width="100%" height="300" src={videos[videoId]?.url} />
+                            <Wrapper direction='column' align='start' style={{ padding: '20px 12px' }}>
+                                <TextStyled size='0.875rem' weight='700'>Descrição</TextStyled>
+                                <Line width='100%' margin='8px 0' height='1px' />
+                                <TextStyled size='0.875rem' style={{ marginBottom: '16px' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis voluptatibus aut</TextStyled>
+                                <TextStyled size='0.875rem' weight='700'>Downloads</TextStyled>
+                                <Line width='100%' margin='8px 0' height='1px' />
+                                <Wrapper gap="4px" style={{ flexWrap: 'wrap' }}>
+                                    <DownloadButtons>
+                                        <div style={{ backgroundColor: 'rgba(76, 202, 118, 0.6)', borderRadius: '4px 0 0 4px' }}>
+                                            <AiOutlineCloudDownload size={16} color="#4cca76" />
+                                        </div>
+                                        <div style={{ backgroundColor: 'rgba(76, 202, 118, 0.4)', borderRadius: '0 4px 4px 0' }}>
+                                            <TextStyled size='0.750rem'>Spreedsheet.xls</TextStyled>
+                                        </div>
+                                    </DownloadButtons>
+                                    <DownloadButtons>
+                                        <div style={{ backgroundColor: 'rgba(70, 155, 212, 0.6)', borderRadius: '4px 0 0 4px' }}>
+                                            <AiOutlineCloudDownload size={16} color="#469bd4" />
+                                        </div>
+                                        <div style={{ backgroundColor: 'rgba(70, 155, 212, 0.4)', borderRadius: '0 4px 4px 0' }}>
+                                            <TextStyled size='0.750rem'>Document.doc</TextStyled>
+                                        </div>
+                                    </DownloadButtons>
+                                    <DownloadButtons>
+                                        <div style={{ backgroundColor: 'rgba(214, 212, 71, 0.6)', borderRadius: '4px 0 0 4px' }}>
+                                            <AiOutlineCloudDownload size={16} color="#b9b746" />
+                                        </div>
+                                        <div style={{ backgroundColor: 'rgba(214, 212, 71, 0.4)', borderRadius: '0 4px 4px 0' }}>
+                                            <TextStyled size='0.750rem'>Presentation.ppt</TextStyled>
+                                        </div>
+                                    </DownloadButtons>
+                                </Wrapper>
+                            </Wrapper>
+                        </DialogContent>
+                    </Dialog.Portal>
+                </Dialog.Root>
                 <Line width='100%' margin='20px 0px' />
                 <Wrapper
                     align="center"

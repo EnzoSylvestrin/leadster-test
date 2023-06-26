@@ -2,7 +2,10 @@ import styled from "styled-components";
 
 import { motion } from 'framer-motion';
 
+import * as Dialog from '@radix-ui/react-dialog';
+
 import { Container, SimpleImage, Wrapper } from "@/styles/globalStyles/Commom";
+import { TextStyled } from "@/components/Text/TextStyled";
 
 export const ContainerVideos = styled(Container)`
     margin: 40px 0;
@@ -78,6 +81,9 @@ export const PlayButton = styled.div`
     transform: translate(50%, -50%);
 `;
 
+export const ModalWrapper = styled(Wrapper)`
+`;
+
 export const WrapperVideos = styled(Wrapper)`
     @media (max-width: 1020px) {
         width: 85%;
@@ -105,5 +111,58 @@ export const WrapperSelect = styled(Wrapper)`
     @media (max-width: 1100px) {
         margin-top: 16px;
         width: 100%;
+    }
+`;
+
+export const DialogOverlay = styled(Dialog.Overlay)`
+    background-color: rgba(10, 10, 10, 0.2);
+    position: fixed;
+    inset: 0;
+`;
+
+export const DialogContent = styled(Dialog.Content)`
+    border-radius: 12px;
+    border-top: 3px solid var(--main);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    max-width: 470px;
+    min-width: 300px;
+    transform: translate(-50%, -50%);
+    outline: 0;
+`;
+
+export const DialogClose = styled(Dialog.Close)`
+    position: absolute;
+    inset: 10px 10px auto auto;
+    cursor: pointer;
+
+    :hover {
+        color: #727272 !important;
+    }
+`;
+
+export const DialogTitle = styled(TextStyled)`
+    width: 60%;
+    padding: 20px;
+`;
+
+export const DownloadButtons = styled.div`
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    
+    div {
+        display: flex;
+        align-items: center;
+        padding: 6px;
     }
 `;

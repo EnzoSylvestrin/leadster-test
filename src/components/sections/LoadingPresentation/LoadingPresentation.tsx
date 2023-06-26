@@ -3,7 +3,7 @@ import Skeleton from "@/components/Skeleton/Skeleton";
 
 import { ContainerPresentation, LinePresentation } from "../Presentation/PresentationStyled";
 
-import { LoadingCard } from "./LoadingStyled";
+import { LoadingCard, LoadingChat, LoadingConvertion, LoadingNote } from "./LoadingStyled";
 import { useState, useEffect } from "react";
 
 const LoadingPresentation = () => {
@@ -39,10 +39,10 @@ const LoadingPresentation = () => {
                         :
                         <>
                             <LoadingCard width={200} height={28} />
-                            <Skeleton width={220} height={40} />
-                            <Skeleton width={400} height={60} />
+                            <LoadingChat width={220} height={40} />
+                            <LoadingConvertion width={400} height={60} />
                             <LinePresentation />
-                            <Skeleton width={450} height={25} />
+                            <LoadingNote width={450} height={25} />
                         </>
                 }
             </ContainerPresentation>

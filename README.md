@@ -9,7 +9,7 @@
 ## 🧠 Decisões:
 
 Decidi criar o projeto usando a versão mais recente do Next com a app router já que está é melhor forma atualmente de criar rotas (na minha visão) garantindo que se o projeto 
-aumentar isso não seja um problema, devido a isso torna-se necessário o marcador 'use client' na página principal devido a imcopatibilidade do Styled Components com o 
+aumentar isso não seja um problema, devido a isso torna-se necessário o marcador 'use client' na página principal devido a incompatibilidade do Styled Components com o 
 server side rendering do next.
 
 Utilizei a biblioteca framer motion para criar animações de scroll e inicialização e a biblioteca React Icons para os icones do projeto.
@@ -18,17 +18,17 @@ Além do storybook para documentação dos componentes principais.
 
 ## 📚 Organização: 
 
-Organizei meu código a partir da componentização, separando componentes utilitários como: botões, selects, linhas e vários outros, e sessões como: Apresentação e 
+Organizei meu código a partir da componentização, separando componentes utilitários como: botões, selects, linhas e vários outros, e seções como: Apresentação e 
 Demonstração do site separadas em uma pasta com o nome de sections.
 
-Além disso criei componentes padrão para diversos casos como containers, imagens e wrappers para deixar o desenvolvimento mais padronizado e eficiente, assim ao criar
-componentes desse tipo precisa apenas herda-los e aplicar os demais estilos ou em casos mais simples utiliza-los diretamente para a construção da interface.
+Além disso criei componentes padrões para diversos casos como containers, imagens e wrappers para deixar o desenvolvimento mais padronizado e eficiente, assim ao criar
+componentes desse tipo é preciso apenas herdá-los e aplicar os demais estilos ou em casos mais simples utiliza-los diretamente para a construção da interface.
 
 ## 🔥 Funcionalidades e intruções:
 
 O projeto conta com funcionalidades extras como as animações de scroll e hover em diversos elementos.
 
-Também foi utilizado a biblioteca storybook para documentação dos componentes.
+Também foi utilizado a biblioteca storybook para documentação dos componentes e o jest com testing library para testes.
 
 ### 🚀 Como rodar o projeto?
 

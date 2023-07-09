@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 
 import 'intersection-observer';
 
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import VideosSection from '../components/sections/Videos/Videos';
 
 // Mock the fetch function

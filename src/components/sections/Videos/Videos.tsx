@@ -25,6 +25,7 @@ type Video = {
     title: string,
     image: string,
     url: string,
+    description: string,
 }
 
 const VideosSection = () => {
@@ -167,7 +168,7 @@ const VideosSection = () => {
                             <Wrapper direction='column' align='start' style={{ padding: '20px 12px' }}>
                                 <TextStyled size='0.875rem' weight='700'>Descrição</TextStyled>
                                 <Line width='100%' margin='8px 0' height='1px' />
-                                <TextStyled size='0.875rem' style={{ marginBottom: '16px' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis voluptatibus aut</TextStyled>
+                                <TextStyled size='0.875rem' style={{ marginBottom: '16px' }}>{videos[videoId]?.description}</TextStyled>
                                 <TextStyled size='0.875rem' weight='700'>Downloads</TextStyled>
                                 <Line width='100%' margin='8px 0' height='1px' />
                                 <Wrapper gap="4px" style={{ flexWrap: 'wrap' }}>

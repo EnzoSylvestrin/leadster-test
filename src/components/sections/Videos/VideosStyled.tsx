@@ -51,11 +51,11 @@ export const Video = styled(motion.div)`
     }
 
     :hover .overlay {
-        display: block;
+        opacity: 1 !important;
     }
 
     :hover .play {
-        display: flex !important;
+        opacity: 1 !important;
     }
 `;
 
@@ -65,17 +65,18 @@ export const OverlayImage = styled.div`
     background-color: rgba(44, 131, 251, 0.5);
     z-index: 2;
     border-radius: 8px 8px 0 0;
-    transition: all 0.3s ease;
-    display: none;
+    transition: all .5s ease;
+    opacity: 0;
 `;
 
 export const PlayButton = styled.div`
     position: absolute;
-    display: none;
+    opacity: 0;
     width: 15%;
     height: 50%;
     z-index: 3;
     inset: 50% 50% auto auto;
+    transition: all .5s ease;
     align-items: center;
     justify-content: center;
     transform: translate(50%, -50%);
